@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace OnbhoardingTask.Models;
 
@@ -7,9 +8,11 @@ public partial class Store
 {
     public int Id { get; set; }
 
+    [Required]
     public string? Name { get; set; }
-
-    public string? Location { get; set; }
+    
+    [Required]
+    public string? Address { get; set; }
 
     public virtual ICollection<Sale> Sales { get; set; } = new List<Sale>();
 }
